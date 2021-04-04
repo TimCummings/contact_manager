@@ -1,0 +1,37 @@
+[
+  {
+    "full_name": "Victor Reyes",
+    "phone_number": "09876543210",
+    "email": "vpr@example.com",
+    "tags": "school",
+    "id": 2
+  },
+  {
+    "full_name": "Pete Hanson",
+    "phone_number": "54321098761",
+    "email": "ph@example.com",
+    "tags": "mascot",
+    "id": 3
+  },
+  {
+    "full_name": "Chris Lee",
+    "phone_number": "1238907653",
+    "email": "cl@test.com",
+    "tags": null,
+    "id": 4
+  },
+  {
+    "full_name": "Minnie Mouse",
+    "phone_number": "4563217891",
+    "email": "mm@fakedisney.com",
+    "tags": "mascot",
+    "id": 5
+  },
+  {
+    "full_name": "Naveed Fida",
+    "phone_number": "12345678902",
+    "email": "nf@example.com",
+    "tags": "work",
+    "id": 6
+  }
+]

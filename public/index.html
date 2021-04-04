@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Contact Manager</title>
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <script src="javascripts/handlebars.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Contact Manager</h1>
+  </header>
+
+  <main>
+    <section id="home" class="page hidden">
+      <section id="tag_controls">
+        <button type="button" data-action="new" data-type="tag">Add Tag</button>
+
+        <form id="filter" name="tags">
+          <select id="tag_controls-tag">
+            <option value="">--Filter by tag--</option>
+          </select>
+        </form>
+      </section>
+
+      <section id="contact_controls">
+        <button type="button" data-action="new" data-type="contact">Add Contact</button>
+
+        <form id="search">
+          <input type="text" id="query" name="query" placeholder="Search" />
+        </form>
+      </section>
+
+      <section id="contacts">
+        <ul>
+        </ul>
+      </section>
+
+      <section id="message" class="hidden">
+        <p>There are no contacts <span></span></p>
+      </section>
+    </section>
+
+    <section id="new_contact" class="page hidden">
+      <form action="/api/contacts" method="post" data-action="new" data-type="contact">
+        <h2>Create Contact</h2>
+        <fieldset>
+          <section class="column">
+            <label for="new_contact-full_name">Full Name:</label>
+            <label for="new_contact-email">Email Address:</label>
+            <label for="new_contact-phone_number">Telephone Number:</label>
+            <label for="new_contact-tags">Tags:</label>
+          </section>
+          <section class="column">
+            <input type="text" id="new_contact-full_name" name="new_contact-full_name"></input>
+            <input type="email" id="new_contact-email" name="new_contact-email"></input>
+            <input type="text" id="new_contact-phone_number" name="new_contact-phone_number"></input>
+            <select id="new_contact-tags" name="new_contact-tags" multiple>
+              <option value="">--Filter by tags--</option>
+            </select>
+            <button type="submit">Submit</button>
+            <button type="button" data-action="cancel" data-type="ui">Cancel</button>
+          </section>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="edit_contact" class="page hidden">
+      <form action="/api/contacts/:id" method="post" data-action="edit" data-type="contact" data-contact-id="">
+        <h2>Edit Contact</h2>
+        <fieldset>
+          <section class="column">
+            <label for="edit_contact-full_name">Full Name:</label>
+            <label for="edit_contact-email">Email Address:</label>
+            <label for="edit_contact-phone_number">Telephone Number:</label>
+            <label for="edit_contact-tags">Tags:</label>
+          </section>
+          <section class="column">
+            <input type="text" id="edit_contact-full_name" name="edit_contact-full_name"></input>
+            <input type="email" id="edit_contact-email" name="edit_contact-email"></input>
+            <input type="text" id="edit_contact-phone_number" name="edit_contact-phone_number"></input>
+            <select id="edit_contact-tags" name="edit_contact-tags" multiple>
+              <option value="">--Filter by tags--</option>
+            </select>
+            <button type="submit">Submit</button>
+            <button type="button" data-action="cancel" data-type="ui">Cancel</button>
+          </section>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="new_tag" class="page hidden">
+      <form action="/api/tags" method="post" data-action="new" data-type="tag">
+        <h2>Create Tag</h2>
+        <fieldset>
+          <section class="column">
+            <label for="new_tag-name">Tag Name:</label>
+          </section>
+          <section class="column">
+            <input type="text" id="new_tag-name" name="new_tag-name"></input>
+            <button type="submit">Submit</button>
+            <button type="button" data-action="cancel" data-type="ui">Cancel</button>
+          </section>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <script id="contactTemplate" type="text/x-handlebars">
+    <li data-id="{{id}}">
+      <div>
+        <h3>{{full_name}}</h3>
+        <dl>
+          <dt>Phone Number:</dt>
+          <dd>{{phone_number}}</dd>
+          <dt>Email:</dt>
+          <dd>{{email}}</dd>
+        </dl>
+        <button type="button" data-action="edit" data-type="contact" data-contact-id="{{id}}">Edit</button>
+        <button type="button" data-action="delete" data-type="contact" data-contact-id="{{id}}">Delete</button>
+      </div>
+    </li>
+  </script>
+
+  <script id="tagTemplate" type="text/x-handlebars">
+    <option value="{{tag}}">{{tag}}</option>
+  </script>
+
+  <script type="module" src="javascripts/app.js"></script>
+</body>
+</html>

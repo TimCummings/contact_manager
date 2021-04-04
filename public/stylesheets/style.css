@@ -1,0 +1,205 @@
+@import url('whitespace-reset.css');
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html, body {
+  font: normal 16px Helvetica, Arial, sans-serif;
+}
+
+body {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+header {
+  background-color: #563d7c;
+  color: white;
+  padding: 1rem;
+}
+
+section.page {
+  margin: 0 auto;
+  width: 85%;
+}
+
+section.column {
+  float: left;
+  margin-right: 1rem;
+  text-align: right;
+  width: 32%;
+}
+
+section.column + section.column {
+  float: right;
+  margin-left: 1rem;
+  text-align: left;
+  width: 62%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-top: 1rem;
+  padding: 1rem 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+fieldset {
+  border-top: 1px solid #e3e3e3;
+  padding-top: 1rem;
+}
+
+fieldset::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+label {
+  font-weight: bold;
+}
+
+ul {
+  font-size: 0;
+  text-align: left;
+}
+
+li {
+  display: inline-block;
+  margin: 0;
+  padding: 1rem;
+  text-align: left;
+  width: 33.3%;
+}
+
+dl {
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  padding: 1rem 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #563d7c;
+  border-radius: 4px;
+  color: #563d7c;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.5rem;
+}
+
+button:hover {
+  background-color: #563d7c;
+  color: white;
+}
+
+button + button {
+  margin-left: 1rem;
+}
+
+select {
+  display: block;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="email"] {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  line-height: 1.9rem;
+  padding-left: 0.5rem;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+section.column label {
+  padding-top: 0.5rem;
+}
+
+section.column input:not([type="button"]),
+section.column label {
+  display: block;
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+
+section.column input:not([type="button"]),
+section.column select {
+  width: 70%;
+}
+
+.hidden {
+  display: none;
+}
+
+#tag_controls,
+#contact_controls {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+#tag_controls::after,
+#contact_controls::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+#tag_controls button,
+#contact_controls button {
+  float: left;
+  margin-left: 5rem;
+}
+
+#tag_controls form {
+  width: 14.5rem;
+}
+
+#tag_controls form,
+#contact_controls form {
+  display: inline-block;
+  float: right;
+  margin-right: 5rem;
+  margin-top: 0.4rem;
+}
+
+#contacts {
+  margin-top: 2rem;
+}
+
+#contacts li div {
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 1rem;
+}
+
+#contacts button {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
